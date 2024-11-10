@@ -1,0 +1,13 @@
+<configuration>
+    <input>
+        <net-file value="net.xml"/>
+        <route-files value="rou.xml"/>
+    </input>
+    <process>
+        <lateral-resolution value="3.75"/>
+    </process>
+    <report>
+        <no-warnings value="True"/>
+        <no-step-log value="True"/>
+    </report>
+</configuration>

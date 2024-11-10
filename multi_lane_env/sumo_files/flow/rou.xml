@@ -1,0 +1,27 @@
+<routes>
+    <vType id="ego" length="4.8" width="2.0" color="255,0,0"/>
+
+    <vType id="0" length="4.8" width="2.0" emergencyDecel="4.5" color="128,255,0"
+           speedFactor="normc(0.35,0.05,0.3,0.4)" lcKeepRight="0" lcSpeedGainRight="1"
+           sigma="0" lcSigma="0" carFollowModel="Krauss" laneChangeModel="SL2015"/>
+    <vType id="1" length="4.8" width="2.0" emergencyDecel="4.5" color="255,255,0"
+           speedFactor="normc(0.4,0.05,0.35,0.45)" lcKeepRight="0" lcSpeedGainRight="1"
+           sigma="0" lcSigma="0" carFollowModel="Krauss" laneChangeModel="SL2015"/>
+    <vType id="2" length="4.8" width="2.0" emergencyDecel="4.5" color="255,128,0"
+           speedFactor="normc(0.4,0.05,0.35,0.45)" lcKeepRight="0" lcSpeedGainRight="1"
+           sigma="0" lcSigma="0" carFollowModel="Krauss" laneChangeModel="SL2015"/>
+    <vType id="3" length="4.8" width="2.0" emergencyDecel="4.5" color="255,128,0"
+           speedFactor="normc(0.45,0.05,0.4,0.5)" lcKeepRight="0" lcSpeedGainRight="1"
+           sigma="0" lcSigma="0" carFollowModel="Krauss" laneChangeModel="SL2015"/>
+
+    <route id="0" edges="0to1"/>
+
+    <flow id="0" begin="0" end="100000000" type="0" route="0" vehsPerHour="300"
+          departSpeed="desired" departLane="best"/>
+    <flow id="1" begin="0" end="100000000" type="1" route="0" vehsPerHour="800"
+          departSpeed="desired" departLane="best"/>
+    <flow id="2" begin="0" end="100000000" type="2" route="0" vehsPerHour="800"
+          departSpeed="desired" departLane="best"/>
+    <flow id="3" begin="0" end="100000000" type="3" route="0" vehsPerHour="500"
+          departSpeed="desired" departLane="best"/>
+</routes>

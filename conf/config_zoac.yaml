@@ -1,0 +1,48 @@
+# General
+label: '1'
+env: 'IDCMultiLaneFlowEnv'
+reward_shift: 0.
+seed: 100
+max_iter: 50
+gamma: 0.99
+cov_type: 'fixed'  # fixed, diag, full
+init_paranoise_std: 0.1  # 0.01 0.02 0.04 0.08
+# Samplers
+samplers_num: 8  # 1 2 4 8 16
+N_step_return: 40  # 10 20 40 60
+train_freq: 25  # 16 32 64
+episode_type: 'Full'
+antithetic: False
+# First-order PEV
+critic_batch_size: 128
+gae_lambda: 0.97 # 0.97 0.99
+critic_hidden_size: 256
+critic_hidden_layers: 2
+critic_step_size: 5e-4
+critic_epochs: 5
+pev_method: 'gae' # gae mc
+disable_critic: False
+recompute_advs: True
+# Zeroth-order PIM
+actor_type: 'MultiLaneDecisionControl'
+elitsm: 1.0
+pim_method: 'zopg'  # zopg or hybrid ablation: CMA, PSO, TwoPointsDE
+actor_mean_step_size: 5e-4
+actor_cov_step_size: 0
+clip_epsilon: 0.1
+actor_epochs: 1
+fit_norm: False
+optimizer: 'sgd'  # sgd, adam
+# Evaluator & Logger
+evaluators_num: 4
+eval_traj_num: 8
+eval_freq: 2
+save_addlinfo: False
+logdir: 'result'
+# Hydra
+hydra:
+  run:
+    dir: run/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: runs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.override_dirname}
