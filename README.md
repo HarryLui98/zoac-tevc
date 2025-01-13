@@ -15,8 +15,9 @@ The results in the paper is based on the following suggested environment:
 
 ### How to Use
 
-1. We use ```hydra``` to configure hyperparameters. See ```conf/config_zoac.yaml``` for details;
-2. Simply run ```python main.py```.
+1. We use ```hydra``` to configure the hyperparameters of ZOAC. See ```conf/config_zoac.yaml``` for details;
+2. Simply run ```python main.py``` to evaluate ZOAC;
+3. You may also run ```python run_baseline.py``` to evaluate evolutionary baselines from ```nevergrad```.
 
 ### Reference
 
