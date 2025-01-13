@@ -1,12 +1,12 @@
 # General
 label: '1'
-env: 'IDCMultiLaneFlowEnv'
+env: 'IDCMultiLaneFlowEnv' # HalfCheetah-v4 InvertedPendulum-v4 Reacher-v4
 reward_shift: 0.
 seed: 100
 max_iter: 50
 gamma: 0.99
-cov_type: 'fixed'  # fixed, diag, full
-init_paranoise_std: 0.1  # 0.01 0.02 0.04 0.08
+cov_type: 'fixed'
+init_paranoise_std: 0.1  # 0.01 0.02 0.05 0.1
 # Samplers
 samplers_num: 8  # 1 2 4 8 16
 N_step_return: 40  # 10 20 40 60
@@ -15,7 +15,7 @@ episode_type: 'Full'
 antithetic: False
 # First-order PEV
 critic_batch_size: 128
-gae_lambda: 0.97 # 0.97 0.99
+gae_lambda: 0.97 # 0.9 0.97 0.99
 critic_hidden_size: 256
 critic_hidden_layers: 2
 critic_step_size: 5e-4
@@ -32,7 +32,7 @@ actor_cov_step_size: 0
 clip_epsilon: 0.1
 actor_epochs: 1
 fit_norm: False
-optimizer: 'sgd'  # sgd, adam
+optimizer: 'sgd'
 # Evaluator & Logger
 evaluators_num: 4
 eval_traj_num: 8
